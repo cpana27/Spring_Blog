@@ -20,6 +20,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public String delete(Comment comment) {
-        return commentRepository.delete(comment);
+        commentRepository.delete(comment);
+        return "Succesfull deleted";
     }
 }
