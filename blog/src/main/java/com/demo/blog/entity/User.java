@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Stack;
 
 @Entity
+@Table(name="user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,6 +15,7 @@ public class User {
 
     private String userName;
 
+    @OneToMany(mappedBy = "user")
     @Transient
     private Collection<Post> postsCollection;
 
