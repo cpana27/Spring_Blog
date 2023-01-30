@@ -1,10 +1,7 @@
 package com.demo.blog.dto;
 
 import com.demo.blog.entity.Post;
-import com.demo.blog.entity.User;
-import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.lang.NonNull;
+import com.demo.blog.entity.UserName;
 
 import java.util.Date;
 
@@ -14,9 +11,9 @@ public class CommentDto {
     private String body;
     private Date creatinDate;
     private Post post;
-    private User user;
+    private UserName user;
 
-    public CommentDto(long id, String body, Date creatinDate, Post post, User user) {
+    public CommentDto(long id, String body, Date creatinDate, Post post, UserName user) {
         this.id = id;
         this.body = body;
         this.creatinDate = creatinDate;
@@ -56,11 +53,11 @@ public class CommentDto {
         this.post = post;
     }
 
-    public User getUser() {
+    public UserName getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserName user) {
         this.user = user;
     }
 }

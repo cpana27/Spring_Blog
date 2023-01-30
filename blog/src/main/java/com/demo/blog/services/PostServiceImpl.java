@@ -2,11 +2,13 @@ package com.demo.blog.services;
 
 import com.demo.blog.entity.Post;
 import com.demo.blog.repository.PostRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Date;
 import java.util.Optional;
 
+@Service
 public class PostServiceImpl implements PostService {
 
     private PostRepository postRepository;
@@ -15,6 +17,10 @@ public class PostServiceImpl implements PostService {
         this.postRepository = postRepository;
     }
 
+    @Override
+    public Collection<Post> getAllPosts(){
+        return postRepository.findAll();
+    }
     @Override
     public Optional<Post> getById(long id) {
         return postRepository.findById(id);

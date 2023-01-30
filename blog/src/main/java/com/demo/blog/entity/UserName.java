@@ -3,30 +3,29 @@ package com.demo.blog.entity;
 import jakarta.persistence.*;
 
 import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Stack;
 
 @Entity
-@Table(name="user")
-public class User {
+@Table(name = "username")
+public class UserName {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Column
     private String userName;
     @OneToMany(mappedBy = "user")
     @Transient
+    @Column
     private Collection<Post> postsCollection;
 
-    public User(long id, Post posts, String userName, Collection<Post> postsCollection) {
+    public UserName(long id, Post posts, String userName, Collection<Post> postsCollection) {
         this.id = id;
         this.userName = userName;
         this.postsCollection = postsCollection;
     }
 
-    public User() {
+    public UserName() {
 
     }
-
     public long getId() {
         return id;
     }

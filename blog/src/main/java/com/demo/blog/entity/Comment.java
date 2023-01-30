@@ -29,7 +29,7 @@ public class Comment {
     @NonNull
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    private User user;
+    private UserName user;
 
 
     public String comments(long id){
@@ -38,4 +38,44 @@ public class Comment {
         return resString;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public Date getCreatinDate() {
+        return creatinDate;
+    }
+
+    public void setCreatinDate(Date creatinDate) {
+        this.creatinDate = creatinDate;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
+    @NonNull
+    public UserName getUser() {
+        return user;
+    }
+
+    public void setUser(@NonNull UserName user) {
+        this.user = user;
+    }
 }

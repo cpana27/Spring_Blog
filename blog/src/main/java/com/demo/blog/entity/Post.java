@@ -17,6 +17,11 @@ public class Post {
     @Column
     private Date creationDate;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+    private UserName user;
+
+
     //Default Constructor
     public Post() {
     }
@@ -58,5 +63,13 @@ public class Post {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public UserName getUser() {
+        return user;
+    }
+
+    public void setUser(UserName user) {
+        this.user = user;
     }
 }

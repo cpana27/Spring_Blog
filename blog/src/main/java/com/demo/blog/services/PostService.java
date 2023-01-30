@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.Optional;
 
 public interface PostService {
+
+    Collection<Post> getAllPosts();
     Optional<Post> getById(long id);
     Collection<Post> getAll(Date date);
     Post save(Post post);
